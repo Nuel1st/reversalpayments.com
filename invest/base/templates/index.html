@@ -1,0 +1,492 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+<html lang="en">
+
+<head>
+{% block main-content %}
+    <!-- Header Start -->
+    <div class="container-fluid hero-header bg-light py-5 mb-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h1 style=" color: aliceblue;" class="display-4 mb-3 animated slideInDown">Your <span style="color: #10379c;">Investments</span>  for any purpose</h1>
+                    <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode' " class="animated slideInright">ReversalPayment was founded to provide an alternative to the volatile investment market for people. <br> <br><span>Welcome to ReversalPayments, where we seamlessly integrate the worlds of crypto and traditional investments, setting the stage for a revolutionary era in financial innovation. As a comprehensive investment platform, we are committed to providing a secure, efficient, and rewarding experience across diverse asset classes.</span></p>
+                    <a href="{% url 'customerregistration' %}" class="btn btn-primary py-3 px-4 animated slideInleft">Register</a>
+                </div>
+                <div class="col-lg-6 animated fadeIn">
+                    <img class="img-fluid animated pulse infinite" style="animation-duration: 3s;" src="{% static 'img/coin.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+                <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+    "symbols": [
+      {
+        "proName": "FOREXCOM:SPXUSD",
+        "title": "S&P 500"
+      },
+      {
+        "proName": "FOREXCOM:NSXUSD",
+        "title": "US 100"
+      },
+      {
+        "proName": "FX_IDC:EURUSD",
+        "title": "EUR to USD"
+      },
+      {
+        "proName": "BITSTAMP:BTCUSD",
+        "title": "Bitcoin"
+      },
+      {
+        "proName": "BITSTAMP:ETHUSD",
+        "title": "Ethereum"
+      },
+      {
+        "description": "",
+        "proName": "BINANCE:SOLUSDT"
+      },
+      {
+        "description": "",
+        "proName": "BINANCE:ADAUSDT"
+      }
+    ],
+    "showSymbolLogo": true,
+    "colorTheme": "dark",
+    "isTransparent": false,
+    "displayMode": "adaptive",
+    "locale": "en"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->  
+  <br><br>
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5 animated slideInleft">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <img class="img-fluid animated slideInleft infinite" style="animation-duration: 7s;" src="{% static 'img/hero-2.png' %}" alt="">
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        <h1 class="display-6 animated slideInright">About Us</h1>
+                        <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode' " class="text-dark fs-5 mb-4">The Most Trusted Investment Platform</p>
+                        <p>Welcome to ReversalPayments, where financial innovation meets unwavering commitment. At ReversalPayments, we're not just a platform; we're architects of a transformative financial experience that seamlessly integrates the worlds of cryptocurrency and traditional investments.</p>
+                        <p class="mb-4">We understand that in an ever-evolving financial world, you need a partner that not only keeps pace with innovation but also prioritizes your security and financial growth.</p>
+                        <div class="d-flex align-items-center mb-2 btn btn-primary">
+                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-4 fw-bold"></i>
+                            <span>Reliable</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-2 btn btn-primary">
+                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-4 fw-bold"></i>
+                            <span>Trusted</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-4 btn btn-primary">
+                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-4 fw-bold"></i>
+                            <span>Secured</span>
+                        </div>
+                        <a class="btn btn-primary py-3 px-4" href="{% url 'about' %}">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+       <!-- Facts Start -->
+       <div class="container-xxl bg-dark py-5 my-5 animated slideInup">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.1s">
+                    <img class="img-fluid mb-4" src="{% static 'img/icon-3.png' %}" alt="">
+                    <h1 class="display-4" data-toggle="counter-up">31453</h1>
+                    <p class="fs-5 text-primary mb-0">Today Transactions</p>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.3s">
+                    
+                    <img class="img-fluid mb-4" src="{% static 'img/icon-9.png' %}" alt="">
+                    <h1 class="display-4" data-toggle="counter-up">643451</h1>
+                    <p class="fs-5 text-primary mb-0">Monthly Transactions</p>
+                    
+                </div>
+                <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <img class="img-fluid mb-4" src="{% static 'img/icon-2.png' %}" alt="">
+                    <h1 class="display-4" data-toggle="counter-up">3873246</h1>
+                    <p class="fs-5 text-primary mb-0">Total Transactions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+    <!-- Features Start -->
+    <div class="container-xxl py-5 animated slideInright">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6">Why Us!</h1>
+                <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode' " class="text-dark fs-5 mb-5">The Best In The crypto Industry</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-start">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/icon-2.png' %}" alt="">
+                        <div class="ps-4">
+                            <h5 class="mb-3">Effortless Multifaceted Transactions</h5>
+                            <span>Dive into the world of crypto and traditional investments seamlessly. Our user-friendly platform ensures smooth transactions, allowing you to trade cryptocurrencies or explore traditional investment opportunities with ease.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="d-flex align-items-start">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/icon-6.png' %}" alt="">
+                        <div class="ps-4">
+                            <h5 class="mb-3">Dual-Layer Security Protocols</h5>
+                            <span>Your investments, spanning crypto and traditional assets, are our top priority. ReversalPayments employs cutting-edge technology and robust security measures, utilizing blockchain for crypto and industry-standard protocols for traditional investments.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-start">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/icon-9.png' %}" alt="">
+                        <div class="ps-4">
+                            <h5 class="mb-3">Innovation Across Diverse Markets</h5>
+                            <span>Stay at the forefront of innovation with ReversalPayments. From managing crypto portfolios to diversifying traditional investments, we provide tools and insights to keep you ahead in both dynamic markets.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-start">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/icon-4.png' %}" alt="">
+                        <div class="ps-4">
+                            <h5 class="mb-3"> Empowering Your Investment Journey</h5>
+                            <span>Beyond transactions, ReversalPayments empowers you with insights and control over your entire investment portfolio. Whether you're exploring the crypto frontier or navigating traditional markets, we're your trusted partner in financial growth.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="d-flex align-items-start">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/icon-7.png' %}"  alt="">
+                        <div class="ps-4">
+                            <h5 class="mb-3">Transparent Operations Across All Assets</h5>
+                            <span>Bid farewell to obscured fees and complex investment structures. ReversalPayments stands for transparency, ensuring you have a clear understanding of your investments, whether they're in crypto or traditional assets.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-start">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/icon-2.png' %}" alt="">
+                        <div class="ps-4">
+                            <h5 class="mb-3">Rewarding Financial Growth</h5>
+                            <span>Join us on a transformative journey where crypto meets traditional investments. ReversalPayments isn't just a platform; it's your gateway to a future where diverse investments are seamless, secure, and ultimately rewarding—available 24/7. Welcome to the evolution of investments; welcome to ReversalPayments.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl bg-light py-5 my-5 animated slideIndown">
+        <div class="container py-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6">Services</h1>
+                <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode' " class="text-primary fs-5 mb-5">Buy, Sell And Exchange Cryptocurrency</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-white p-5">
+                        <img class="img-fluid mb-4" src="{% static 'img/btc.png' %}" alt="">
+                        <h5 class="mb-3">Currency Wallet</h5>
+                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                        <a href="{% url 'service' %}">Read More <i class="fa fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-white p-5">
+                        <img class="img-fluid mb-4" src="{% static 'img/premium.png' %}" alt="">
+                        <h5 class="mb-3">Currency Transaction</h5>
+                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                        <a href="{% url 'service' %}">Read More <i class="fa fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-white p-5">
+                        <img class="img-fluid mb-4" src="{% static 'img/btc.png' %}" alt="">
+                        <h5 class="mb-3">Bitcoin Investment</h5>
+                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                        <a href="{% url 'service' %}">Read More <i class="fa fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-white p-5">
+                        <img class="img-fluid mb-4" src="{% static 'img/increase.png' %}" alt="">
+                        <h5 class="mb-3">Currency Exchange</h5>
+                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                        <a href="{% url 'service' %}">Read More <i class="fa fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-white p-5">
+                        <img class="img-fluid mb-4" src="{% static 'img/grow.png' %}" alt="">
+                        <h5 class="mb-3">Bitcoin Escrow</h5>
+                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                        <a href="{% url 'service' %}">Read More <i class="fa fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-white p-5">
+                        <img class="img-fluid mb-4" src="{% static 'img/increase.png' %}" alt="">
+                        <h5 class="mb-3">Token Sale</h5>
+                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                        <a href="{% url 'service' %}">Read More <i class="fa fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    
+
+
+    <!-- Top Investors -->
+
+    <div class="container-xxl bg-light py-5 my-5 animated slideIndown">
+        <div class="container py-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6">Top Investors</h1>
+                <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode' " class="text-primary fs-5 mb-5">Translate Your Dream Into Reality</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-white p-5">
+                        <img class="img-fluid mb-4" src="{% static 'img/btc.png' %}" alt="">
+                        <h5 class="mb-3">James Calvin</h5>
+                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                        <!-- <a href="{% url 'service' %}">Read More <i class="fa fa-arrow-right ms-2"></i></a> -->
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-white p-5">
+                        <img class="img-fluid mb-4" src="{% static 'img/btc.png' %}" alt="">
+                        <h5 class="mb-3">Magret Elizabeth</h5>
+                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                        <!-- <a href="{% url 'service' %}">Read More <i class="fa fa-arrow-right ms-2"></i></a> -->
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-white p-5">
+                        <img class="img-fluid mb-4" src="{% static 'img/btc.png' %}" alt="">
+                        <h5 class="mb-3">Eric Loper</h5>
+                        <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                        <!-- <a href="{% url 'service' %}">Read More <i class="fa fa-arrow-right ms-2"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6">Top Investors</h1>
+                <p class="text-dark fs-5 mb-5">We Translate Your Dream Into Reality</p>
+            </div>
+            <div class="owl-carousel roadmap-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="roadmap-item">
+                    <div class="roadmap-point"><span></span></div>
+                    <h5>James Calvin</h5>
+                    <span>Diam dolor ipsum sit amet erat ipsum lorem sit</span>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-point"><span></span></div>
+                    <h5>Magret Elizabeth</h5>
+                    <span>Diam dolor ipsum sit amet erat ipsum lorem sit</span>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-point"><span></span></div>
+                    <h5>Eric Loper</h5>
+                    <span>Diam dolor ipsum sit amet erat ipsum lorem sit</span>
+                </div> -->
+                <!-- <div class="roadmap-item">
+                    <div class="roadmap-point"><span></span></div>
+                    <h5>July 2045</h5>
+                    <span>Diam dolor ipsum sit amet erat ipsum lorem sit</span>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-point"><span></span></div>
+                    <h5>September 2045</h5>
+                    <span>Diam dolor ipsum sit amet erat ipsum lorem sit</span>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-point"><span></span></div>
+                    <h5>November 2045</h5>
+                    <span>Diam dolor ipsum sit amet erat ipsum lorem sit</span>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Top Investors End -->
+
+    <!-- <section class="home-section py-4"> -->
+        <div class="overlay h-100">
+            <div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async>
+  {
+  "width": "100%",
+  "height": "100%",
+  "currencies": [
+    "EUR",
+    "USD",
+    "JPY",
+    "GBP",
+    "CHF",
+    "AUD",
+    "CAD",
+    "NZD",
+    "CNY"
+  ],
+  "isTransparent": false,
+  "colorTheme": "dark",
+  "locale": "en"
+}
+  </script>
+</div>
+        </div>
+
+
+    <!-- Token Sale Start -->
+    <div class="container-xxl bg-light py-5 my-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6">Token Sale</h1>
+                <p class="text-primary fs-5 mb-5">Token Sale Countdown</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-6 col-md-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="bg-white text-center p-3">
+                        <h1 class="mb-0">10</h1>
+                        <span class="text-primary fs-5">Days</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="bg-white text-center p-3">
+                        <h1 class="mb-0">160</h1>
+                        <span class="text-primary fs-5">Hours</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="bg-white text-center p-3">
+                        <h1 class="mb-0">32383</h1>
+                        <span class="text-primary fs-5">Minutes</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="bg-white text-center p-3">
+                        <h1 class="mb-0">434567865</h1>
+                        <span class="text-primary fs-5">Seconds</span>
+                    </div>
+                </div>
+                <div class="col-12 text-center py-4">
+                    <a class="btn btn-primary py-3 px-4" href="{% url 'customerregistration' %}">Register</a>
+                </div>
+                <div class="col-12 text-center">
+                    <img class="img-fluid m-1" src="{% static 'img/payment-1.png' %}" alt="" style="width: 50px;">
+                    <img class="img-fluid m-1" src="{% static 'img/payment-2.png' %}" alt="" style="width: 50px;">
+                    <img class="img-fluid m-1" src="{% static 'img/payment-3.png' %}" alt="" style="width: 50px;">
+                    <img class="img-fluid m-1" src="{% static 'img/payment-4.png' %}" alt="" style="width: 50px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Token Sale Start -->
+{% endblock main-content %}
+
+
+   
+
+{% block footer %}
+    <!-- Footer Start -->
+    <div class="container-fluid bg-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h1 class="m-0 text-bg mb-4"><img class="img-fluid me-2" src="{% static 'img/logo.png' %}" alt="" style="width: 45px;">ReversalPayments</h1>
+                    <span>ReversalPayment was founded to provide an alternative to the volatile investment market for people.</span>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Welcome to Reversal Payments, give us your feedback.</p>
+                    <div class="position-relative">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your Feedback"> 
+                        <button type="button"  class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2"><a href="ReversalPayments@gmail.com"></a> Enter</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Get In Touch</h5>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p><i class="fa fas-envelope me-3"></i>ReversalPayments@gmail.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Our Services</h5>
+                    <a class="btn btn-link" href="#">Currency Wallet</a>
+                    <a class="btn btn-link" href="#">Currency Transaction</a>
+                    <a class="btn btn-link" href="#">Bitcoin Investment</a>
+                    <a class="btn btn-link" href="#">Token Sale</a>
+                </div>
+
+                {% if user.request == user %}
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="{% url 'about' %}">About Us</a>
+                    <a class="btn btn-link" href="{% url 'contact' %}">Contact Us</a>
+                    <a class="btn btn-link" href="{% url 'service' %}">Our Services</a>
+                    <a class="btn btn-link" href="{% url 'plan' %}">Plan</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                </div>
+                {% endif %}
+                <!-- <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Follow Us</h5>
+                    <div class="d-flex">
+                        <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">ReversalPayments 2023</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    {% endblock footer %}
+    
+</body>
+
+</html>
