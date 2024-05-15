@@ -1,0 +1,13 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block main-content %}
+<h2>Dashboard</h2>
+  <p>Total Deposit: ${{ total_deposit }}</p>
+  <h3>Your Deposits</h3>
+  <ul>
+    {% for deposit in deposits %}
+      <li>{{ deposit.date }} - ${{ deposit.amount }}</li>
+    {% endfor %}
+  </ul>
+{% endblock main-content %}

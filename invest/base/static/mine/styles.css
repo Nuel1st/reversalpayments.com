@@ -1,0 +1,166 @@
+/* Hamburger menu container */
+.hamburger-menu {
+  display: none; /* Initially hide the menu */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px; /* Adjust width as needed */
+  height: 100%;
+  background-color: #fff; /* Adjust background color */
+  z-index: 1000;
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  transition: transform 0.3s ease-in-out; /* Smooth transition animation */
+}
+
+/* Hamburger menu expanded state */
+.hamburger-menu-expanded {
+  transform: translateX(0); /* Slide in from the left */
+}
+
+/* Hamburger icon */
+.hamburger-icon {
+  position: fixed;
+  top: 20px; /* Adjust vertical position */
+  left: 20px; /* Adjust horizontal position */
+  cursor: pointer;
+  z-index: 1001; /* Ensure it's above the menu */
+}
+
+/* Styles for wallet content */
+.wallet-wrapper {
+  padding: 20px;
+}
+
+/* Styles for main menu */
+.main {
+  padding: 20px;
+  list-style-type: none;
+}
+
+/* Styles for individual menu items */
+.main li {
+  margin-bottom: 10px;
+}
+
+.main li a {
+  text-decoration: none;
+  color: #333; /* Adjust link color */
+  font-size: 16px; /* Adjust font size */
+  display: block;
+}
+
+.main li a:hover {
+  color: #555; /* Adjust link color on hover */
+}
+
+
+
+
+/* navbar */
+
+div strong{
+  color: rgb(26, 155, 97);
+  font-size: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  margin: 27px auto 0;
+  position: relative;
+  width: 590px;
+  height: 50px;
+  background-color: #34495e;
+  border-radius: 14px;
+}
+
+.ro{
+  padding-right: 0px;
+  margin: auto 0;
+  float: right;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  color: orange;
+  margin-right: 20px;
+}
+
+nav{
+  margin: 27px auto 0;
+  position: relative;
+  width: 590px;
+  height: 50px;
+  background-color: #34495e;
+  border-radius: 8px;
+  font-size: 0;
+}
+
+nav a{
+  line-height: 50px;
+  height: 100%;
+  font-size: 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+}
+
+nav .animation{
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  transition: all .5s ease 0s;
+  border-radius: 8px;
+}
+
+a:nth-child(1){
+  width: 100px;
+}
+
+a:nth-child(2){
+  width: 110px;
+}
+
+a:nth-child(3){
+  width: 100px;
+}
+
+a:nth-child(4){
+  width: 160px;
+}
+
+a:nth-child(5){
+  width: 120px;
+}
+
+nav.start-home, a:nth-child(1):hover~.animation{
+  width: 100px;
+  left: 0;
+  background-color: #1abc9c;
+}
+
+nav.start-about, a:nth-child(2):hover~.animation{
+  width: 110px;
+  left: 100px;
+  background-color: #e74c3c;
+}
+
+nav.start-portfolio, a:nth-child(3):hover~.animation{
+  width: 100px;
+  left: 210px;
+  background-color: #3498db;
+}
+
+nav.start-contact, a:nth-child(4):hover~.animation{
+  width: 160px;
+  left: 310px;
+  background-color: #9b59b6;
+}
+
+nav.start-feedback, a:nth-child(5):hover~.animation{
+  width: 120px;
+  left: 470px;
+  background-color: #e67e22;
+}

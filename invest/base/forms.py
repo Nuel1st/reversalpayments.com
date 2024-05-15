@@ -1,12 +1,49 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UsernameField, PasswordChangeForm, SetPasswordForm, PasswordResetForm
+from django.contrib.auth import authenticate
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UsernameField, PasswordChangeForm, SetPasswordForm, PasswordResetForm, UsernameField
 from django.contrib.auth.models import User
 from .models import Customer, UserProfile
+from .models import *
 
+# class LoginForm(AuthenticationForm):
+#     username = UsernameField(widget=forms.TextInput(attrs={'autofocus':'True', 'class':'form-control'}))
+#     password = forms.CharField(widget=forms.PasswordInput(attrs={'autocomplete':'current-password', 'class':'form-control'}))
 
 class LoginForm(AuthenticationForm):
     username = UsernameField(widget=forms.TextInput(attrs={'autofocus':'True', 'class':'form-control'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'autocomplete':'current-password', 'class':'form-control'}))
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].label = 'Username or Email'
+
+    def clean(self):
+        username = self.cleaned_data.get('username')
+        password = self.cleaned_data.get('password')
+
+        if username and password:
+            # Check if the username is an email address
+            if '@' in username:
+                try:
+                    user = User.objects.get(email=username)
+                except User.DoesNotExist:
+                    user = None
+            else:
+                user = authenticate(username=username, password=password)
+
+            if user is None:
+                raise forms.ValidationError(
+                    "Invalid username or password. Please try again."
+                )
+            else:
+                self.user_cache = user
+                if not user.check_password(password):
+                    raise forms.ValidationError(
+                        "Invalid username or password. Please try again."
+                    )
+
+        return self.cleaned_data
+
 
 
 
@@ -55,3 +92,10 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['image']
+
+
+
+class DepositForm(forms.ModelForm):
+    class Meta:
+        model = Deposit
+        fields = ['amount']

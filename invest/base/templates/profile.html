@@ -3,7 +3,7 @@
 {% block title %} Profile {% endblock title %}
 
 {% block main-content %}
-
+<!--
 <div class="container my-5">
     <div class="row profile__avatar">
         <h3 class="text-center">Welcome! <span class="text-capitalize">{{request.user}}</span></h3>
@@ -22,7 +22,7 @@
                     {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small> <br>
                     {% endfor %}
                 <div class="col-12 mt-3">
-                    <!-- <input id="profile_pic" name="profile_pic" type="file"/> -->
+                    <input id="profile_pic" name="profile_pic" type="file"/>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 {% if form.non_field_errors %}
@@ -41,7 +41,761 @@
 
         </div>
     </div>
+</div> -->
+
+<body style="background-color:#010513 ;"   onload="preloder_function()" class="">
+
+    <!-- preloader_area_start -->
+    <div id="preloader">
+    </div>
+    <!-- preloader_area_end -->
+
+    <div class="dashboard-wrapper">
+        <!------ sidebar ------->
+        <style>
+    .sidebar-img {
+        width: 200px;
+        height: fit-content;
+    }
+</style>
+
+<style>
+    :root{
+
+    --bg01: linear-gradient(180deg,
+    #22262A 0%,
+    #181A1D 100%);
+
+    --bg02: linear-gradient(135deg, #2F3439, #1d1f23);
+
+    --bg03: linear-gradient(135deg, #2c3136, #1d2023);
+
+    --bg04: #040404;
+
+    --border01: #22262a,
+    --border02: #1a1d21;
+
+    /* bos-shadow */
+
+    --box-shadow01:
+    -6px -6px 10px #151618,
+    -6px -6px 10px #2c3136,
+    inset 2px 2px 6px #33353b,
+    inset -3px -3px 6px #151618;
+
+    --box-shadow02:
+    -6px -6px 10px #151618,
+    6px 6px 10px #2c3136,
+    inset 2px 2px 6px #33353b,
+    inset -3px -3px 6px #151618;
+
+    .main.tabScroll {
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 10px;
+    }
+    
+    .btn-custom{
+    background: var(--bg02);
+    border: 2px solid var(--border01);
+    box-shadow: var(--box-shadow01);
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    color: #86898c;
+    font-size: 22px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    }
+}
+</style>
+
+
+<div id="sidebar" class="">
+    <div class="sidebar-top">
+        <!-- <a class="navbar-brand" href="https://www.minemaster.live"> -->
+            <!-- <img src="https://www.minemaster.l
+             -->
+        </a>
+        <button
+            class="sidebar-toggler d-md-none"
+            onclick="toggleSideMenu()"
+        >
+            <i class="fal fa-times"></i>
+        </button>
+    </div>
+
+
+    
+
+
+
+    <div class="wallet-wrapper">
+        <div class="wallet-box d-none d-lg-block">
+            <h4>Account Balance</h4>
+            <h5> Main Balance <span>£1000.00</span></h5>
+            <h5 class="mb-0"> Interest Balance <span>£0.00</span></h5>
+            <span class="tag">Pounds</span>
+        </div>
+        <div class="d-flex justify-content-between mt-1">
+            <a class="btn-custom" href="https://www.minemaster.live/user/add-fund"><i class="fal fa-wallet"></i> Deposit</a>
+            <a class="btn-custom" href="https://www.minemaster.live/plan"><i class="fal fa-usd-circle"></i> Invest</a>
+        </div>
+    </div>
+
+    <style>
+    .main.tabScroll {
+    border: 2px solid blue;
+    border-radius: 10px; 
+    padding: 10px; 
+}
+    </style>
+
+<ul style="color: #ffff; border: 2px solid blue; border-radius: 10px; padding: 10px;" class="main tabScroll">
+    <li>
+        <a style="color: #fff;" class="active" href="{% url 'home' %}"
+        > <i class="fal fa-border-all"></i> Dashboard</a>
+    </li>
+  <li>
+        <a style="color: #fff;"  href="{% url 'signal' %}"class="sidebar-link ">
+            <i class="fal fa-layer-group"></i> Signal Purchase</a>
+    </li>
+
+    <li>
+        <a style="color: #fff;"  href="{% url 'plan' %}" class="sidebar-link ">
+            <i class="fal fa-layer-group"></i> Plans            </a>
+    </li>
+
+    <li>
+        <a style="color: #fff;"  href="{% url 'home' %}" class="sidebar-link ">
+            <i class="fal fa-file-medical-alt"></i> invest history            </a>
+    </li>
+
+    <li>
+        <a style="color: #fff;"  href="{% url 'home' %}" class="sidebar-link ">
+            <i class="far fa-funnel-dollar"></i> Add Fund            </a>
+    </li>
+    <li>
+        <a style="color: #fff;"  href="{% url 'home' %}" class="sidebar-link ">
+            <i class="far fa-search-dollar"></i> Fund History            </a>
+    </li>
+    <li >
+        <a style="color: #fff;"  href="{% url 'home' %}" class="sidebar-link ">
+            <i class="far fa-money-check-alt"></i> transfer            </a>
+    </li>
+    <li>
+        <a style="color: #fff;"  href="{% url 'home' %}" class="sidebar-link ">
+            <i class="far fa-sack-dollar"></i> transaction            </a>
+    </li>
+    <li>
+        <a style="color: #fff;"  href="{% url 'home' %}" class="sidebar-link ">
+            <i class="fal fa-hand-holding-usd"></i> Withdraw Funds            </a>
+    </li>
+    <li>
+        <a style="color: #fff;"  href="{% url 'home' %}" class="sidebar-link ">
+            <i class="far fa-badge-dollar"></i> Withdrawal history            </a>
+    </li>
+    <li>
+        <a style="color: #fff;"  href="{% url 'home' %}" class="sidebar-link ">
+            <i class="fal fa-retweet-alt"></i> my referral            </a>
+    </li>
+    <li class="">
+        <a style="color: #fff;"  href="{% url 'home' %}" class="sidebar-link">
+            <i class="fal fa-money-bill"></i> referral bonus            </a>
+    </li>
+
+    <li>
+        <a style="color: #fff;" href="{% url 'home' %}" class="sidebar-link ">
+            <i class="fal fa-badge"></i>Badges            </a>
+    </li>
+
+    <li>
+        <a style="color: #fff;"  href="{% url 'home' %}" class="sidebar-link ">
+            <i class="fal fa-user"></i> profile settings            </a>
+    </li>
+    <li>
+        <a style="color: #fff;"  href="{% url 'home' %}" class="sidebar-link ">
+            <i class="fal fa-user-headset"></i> support ticket            </a>
+    </li>
+</ul>
 </div>
+
+        <!-- content -->
+        <div id="content">
+            <div class="overlay">
+                <!-- navbar -->
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href=""> ReversalPayments>
+                        <button class="sidebar-toggler" onclick="toggleSideMenu()">
+                            <i class="fal fa-bars"></i>
+                        </button>
+                        <span class="navbar-text">
+                        <!-- notification panel -->
+                        <!-- notification panel -->
+<div class="notification-panel" id="pushNotificationArea">
+    <button class="dropdown-toggle">
+        <i class="far fa-bell"></i>
+        <span v-if="items.length > 0" class="count" v-cloak>{{items.length}}</span>
+    </button>
+    <ul :class = "(items.length > 0)?'notification-dropdown':'no-notification-dropdown'">
+        <div v-if="items.length > 0" class="dropdown-box">
+            <li v-for="(item, index) in items" @click.prevent="readAt(item.id, item.description.link)">
+                <a class="dropdown-item" href="javascript:void(0)">
+                    <i class="fal fa-bell"></i>
+                    <div class="text">
+                        <h4 class="notification-heading" v-cloak v-html="item.description.text"></h4>
+                        <p v-cloak>{{ item.formatted_date }}</p>
+                    </div>
+                </a>
+            </li>
+        </div>
+        <div class="clear-all fixed-bottom">
+            <a href="javascript:void(0)" v-if="items.length > 0" @click.prevent="readAll">Clear all</a>
+            <a href="javascript:void(0)" v-if="items.length == 0"
+               @click.prevent="readAll">You have no notifications</a>
+        </div>
+    </ul>
+</div>
+
+
+
+
+
+
+                         <!-- user panel -->
+                        <!-- user panel -->
+<!-- <div class="user-panel">
+   <span class="profile">
+      <img
+          src="https://www.minemaster.live/assets/admin/images/default.png"
+          class="img-fluid"
+          alt="user img"
+      />
+   </span>
+    <ul class="user-dropdown">
+        <li>
+            <a href="https://www.minemaster.live/user/dashboard">
+                <i class="fal fa-border-all"></i> Dashboard
+            </a>
+        </li>
+        <li>
+            <a href="https://www.minemaster.live/user/profile">
+                <i class="fal fa-user"></i> My Profile            </a>
+        </li>
+        <li>
+            <a href="https://www.minemaster.live/user/twostep-security">
+                <i class="fal fa-lock"></i> 2FA Security            </a>
+        </li>
+        <li>
+            <a href="https://www.minemaster.live/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i class="fal fa-sign-out-alt"></i> Logout            </a>
+            <form id="logout-form" action="https://www.minemaster.live/logout" method="POST" class="d-none">
+                <input type="hidden" name="_token" value="tIo3zNqsz0WUDbDnNFEp30CxxZobcmSWqW6rEi2O">            </form>
+        </li>
+    </ul>
+</div> -->
+                     </span>
+                    </div>
+                </nav>
+                    <!-- main -->
+    <div class="container-fluid">
+        <div class="main row">
+            <div class="col-12">
+                <div class="row g-4 mb-4">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-box">
+                            <h5>Main Balance</h5>
+                            <h3><small><sup>£</sup></small>1000</h3>
+                            <i class="far fa-funnel-dollar"></i>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-box box-2">
+                            <h5>Interest Balance</h5>
+                            <h3><small><sup>£</sup></small>0</h3>
+                            <i class="far fa-hand-holding-usd"></i>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-box box-3">
+                            <h5>Total Deposit</h5>
+                            <h3><small><sup>£</sup></small>1000</h3>
+                            <i class="fal fa-box-usd"></i>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-box box-4">
+                        <h5>Total Earn</h5>
+                            <h3><small><sup>£</sup></small>0</h3>
+                            <i class="far fa-badge-dollar"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 mb-4">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-box">
+                            <h5>Total Invest</h5>
+                            <h3><small><sup>£</sup></small>0</h3>
+                            <i class="far fa-search-dollar"></i>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-box box-2">
+                            <h5>Total Payout</h5>
+                            <h3><small><sup>£</sup></small>0</h3>
+                            <i class="fal fa-usd-circle"></i>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-box box-4">
+                            <h5>Total Referral Bonus</h5>
+                            <h3><small><sup>£</sup></small>0</h3>
+                            <i class="fal fa-lightbulb-dollar"></i>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-box box-3">
+                            <h5>Total Ticket</h5>
+                            <h3>0</h3>
+                            <i class="fal fa-ticket"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- charts -->
+                <section class="chart-information">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="progress-wrapper">
+                                <div
+                                    id="container"
+                                    class="apexcharts-canvas"
+                                ></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 mb-4">
+                            <div class="progress-wrapper progress-wrapper-circle">
+                                <div class="progress-container d-flex flex-column flex-sm-row justify-content-around">
+                                    <div class="circular-progress cp_1">
+                                        <svg
+                                            class="radial-progress"
+                                            data-percentage="0"
+                                            viewBox="0 0 80 80"
+                                        >
+                                            <circle
+                                                class="incomplete"
+                                                cx="40"
+                                                cy="40"
+                                                r="35"
+                                            ></circle>
+                                            <circle
+                                                class="complete"
+                                                cx="40"
+                                                cy="40"
+                                                r="35"
+                                                style="
+                                    stroke-dashoffset: 39.58406743523136;
+                                    "
+                                            ></circle>
+                                            <text
+                                                class="percentage"
+                                                x="50%"
+                                                y="53%"
+                                                transform="matrix(0, 1, -1, 0, 80, 0)"
+                                            >
+                                                0 %
+                                            </text>
+                                        </svg>
+                                        <h4 class="golden-text mt-4 text-center">
+                                            Invest Completed                                        </h4>
+                                    </div>
+
+                                    <div class="circular-progress cp_3">
+                                        <svg
+                                            class="radial-progress"
+                                            data-percentage="100"
+                                            viewBox="0 0 80 80"
+                                        >
+                                            <circle
+                                                class="incomplete"
+                                                cx="40"
+                                                cy="40"
+                                                r="35"
+                                            ></circle>
+                                            <circle
+                                                class="complete"
+                                                cx="40"
+                                                cy="40"
+                                                r="35"
+                                                style="
+                                    stroke-dashoffset: 39.58406743523136;
+                                    "
+                                            ></circle>
+                                            <text
+                                                class="percentage"
+                                                x="50%"
+                                                y="53%"
+                                                transform="matrix(0, 1, -1, 0, 80, 0)"
+                                            >
+                                                100 %
+                                            </text>
+                                        </svg>
+
+                                        <h4 class="golden-text mt-4 text-center">
+                                            ROI Speed                                        </h4>
+                                    </div>
+
+                                    <div class="circular-progress cp_2">
+                                        <svg
+                                            class="radial-progress"
+                                            data-percentage="0"
+                                            viewBox="0 0 80 80"
+                                        >
+                                            <circle
+                                                class="incomplete"
+                                                cx="40"
+                                                cy="40"
+                                                r="35"
+                                            ></circle>
+                                            <circle
+                                                class="complete"
+                                                cx="40"
+                                                cy="40"
+                                                r="35"
+                                                style="
+                                    stroke-dashoffset: 147.3406954533613;
+                                    "
+                                            ></circle>
+                                            <text
+                                                class="percentage"
+                                                x="50%"
+                                                y="53%"
+                                                transform="matrix(0, 1, -1, 0, 80, 0)"
+                                            >
+                                                0 %
+                                            </text>
+                                        </svg>
+
+                                        <h4 class="golden-text mt-4 text-center">
+                                            ROI Redeemed                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="row g-4 mb-4">
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-box box-2">
+                            <h5>The Last Referral Bonus</h5>
+                            <h3><small><sup>£</sup></small>0</h3>
+                            <i class="fal fa-box-open"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-9  col-md-12">
+                        <div class="dashboard-box">
+                            <h5>Referral Link</h5>
+                            <div class="input-group mb-3 cutom__referal_input__group">
+                                <input type="text" class="form-control copy__referal__input" value="https://www.minemaster.live/register/Jonny" id="sponsorURL" readonly>
+                                <button class="input-group-text btn-custom copy__referal__btn copytext" id="copyBoard" onclick="copyFunction()">copy link</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <style>
+            .home-section {
+                height: 100vh;
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                z-index: 1;
+                overflow-x: hidden;
+                overflow-y: hidden;
+
+            }
+        </style>
+    <section class="home-section py-4">
+        <div class="overlay h-100">
+            <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+  {
+  "symbols": [
+    [
+      "BINANCE:BTCUSDT|1D"
+    ],
+    [
+      "BINANCE:ETHUSDT|1D"
+    ],
+    [
+      "BINANCE:XRPUSDT|1D"
+    ]
+  ],
+  "chartOnly": false,
+  "width": 1000,
+  "height": 500,
+  "locale": "en",
+  "colorTheme": "dark",
+  "autosize": true,
+  "showVolume": false,
+  "showMA": false,
+  "hideDateRanges": false,
+  "hideMarketStatus": false,
+  "hideSymbolLogo": false,
+  "scalePosition": "right",
+  "scaleMode": "Normal",
+  "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+  "fontSize": "10",
+  "noTimeScale": false,
+  "valuesTracking": "1",
+  "changeMode": "price-and-percent",
+  "chartType": "area",
+  "maLineColor": "#2962FF",
+  "maLineWidth": 1,
+  "maLength": 9,
+  "lineWidth": 2,
+  "lineType": 0,
+  "dateRanges": [
+    "1d|1",
+    "1m|30",
+    "3m|60",
+    "12m|1D",
+    "60m|1W",
+    "all|1M"
+  ]
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+    </section>            </div>
+        </div>
+    </div>
+
+    <!-- arrow up -->
+    <a href="#" class="scroll-up"><i class="fal fa-long-arrow-up"></i> </a>
+
+
+<script src="https://www.minemaster.live/assets/themes/darkpurple/js/bootstrap.bundle.min.js"></script>
+<script src="https://www.minemaster.live/assets/themes/darkpurple/js/jquery-3.6.1.min.js"></script>
+<script src="https://www.minemaster.live/assets/themes/darkpurple/js/jquery-ui.js"></script>
+<script src="https://www.minemaster.live/assets/themes/darkpurple/js/aos.js"></script>
+<script src="https://www.minemaster.live/assets/themes/darkpurple/js/radialprogress.js"></script>
+<script src="https://www.minemaster.live/assets/themes/darkpurple/js/select2.min.js"></script>
+<script src="https://www.minemaster.live/assets/themes/darkpurple/js/fontawesomepro.js"></script>
+
+
+<script src="https://www.minemaster.live/assets/global/js/notiflix-aio-2.7.0.min.js"></script>
+<script src="https://www.minemaster.live/assets/global/js/pusher.min.js"></script>
+<script src="https://www.minemaster.live/assets/global/js/vue.min.js"></script>
+<script src="https://www.minemaster.live/assets/global/js/axios.min.js"></script>
+<!-- custom script -->
+<script src="https://www.minemaster.live/assets/themes/darkpurple/js/dashboard.js"></script>
+
+
+<script>
+    'use strict';
+    let pushNotificationArea = new Vue({
+        el: "#pushNotificationArea",
+        data: {
+            items: [],
+        },
+        mounted() {
+            this.getNotifications();
+            this.pushNewItem();
+        },
+        methods: {
+            getNotifications() {
+                let app = this;
+                axios.get("https://www.minemaster.live/user/push-notification-show")
+                    .then(function (res) {
+                        app.items = res.data;
+                    })
+            },
+            readAt(id, link) {
+                let app = this;
+                let url = "https://www.minemaster.live/user/push-notification-readAt/0";
+                url = url.replace(/.$/, id);
+                axios.get(url)
+                    .then(function (res) {
+                        if (res.status) {
+                            app.getNotifications();
+                            if (link != '#') {
+                                window.location.href = link
+                            }
+                        }
+                    })
+            },
+            readAll() {
+                let app = this;
+                let url = "https://www.minemaster.live/user/push.notification.readAll";
+                axios.get(url)
+                    .then(function (res) {
+                        if (res.status) {
+                            app.items = [];
+                        }
+                    })
+            },
+            pushNewItem() {
+                let app = this;
+                // Pusher.logToConsole = true;
+                let pusher = new Pusher("7f333d3a98d4f2f16daa", {
+                    encrypted: true,
+                    cluster: "ap2"
+                });
+                let channel = pusher.subscribe('user-notification.' + "38");
+                channel.bind('App\\Events\\UserNotification', function (data) {
+                    app.items.unshift(data.message);
+                });
+                channel.bind('App\\Events\\UpdateUserNotification', function (data) {
+                    app.getNotifications();
+                });
+            }
+        }
+    });
+</script>
+
+
+    <script src="https://www.minemaster.live/assets/themes/darkpurple/js/apexcharts.js"></script>
+
+    <script>
+        "use strict";
+
+        var options = {
+            theme: {
+                mode: "light",
+            },
+
+            series: [
+                {
+                    name: "Investment",
+                    color: 'rgba(247, 147, 26, 1)',
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0]
+                },
+                {
+                    name: "Payout",
+                    color: 'rgba(240, 16, 16, 1)',
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0]
+                },
+                {
+                    name: "Deposit",
+                    color: 'rgba(255, 72, 0, 1)',
+                    data: [0,0,1000,0,0,0,0,0,0,0,0,0]
+                },
+                {
+                    name: "Deposit Bonus",
+                    color: 'rgba(39, 144, 195, 1)',
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0]
+                },
+                {
+                    name: "Investment Bonus",
+                    color: 'rgba(136, 203, 245, 1)',
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0]
+                }
+            ],
+            chart: {
+                type: 'bar',
+                // height: ini,
+                background: '#fff',
+                toolbar: {
+                    show: false
+                }
+
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                    columnWidth: '55%',
+                    endingShape: 'rounded'
+                },
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                show: true,
+                width: 2,
+                colors: ['transparent']
+            },
+            xaxis: {
+                categories: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+
+            },
+            yaxis: {
+                title: {
+                    text: ""
+                }
+            },
+            fill: {
+                opacity: 1
+            },
+            tooltip: {
+                colors: ['#fff'],
+                y: {
+                    formatter: function (val) {
+                        return "£" + val + ""
+                    }
+                }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#container"), options);
+        chart.render();
+
+        function copyFunction() {
+            var copyText = document.getElementById("sponsorURL");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            /*For mobile devices*/
+            document.execCommand("copy");
+            Notiflix.Notify.Success(`Copied: ${copyText.value}`);
+        }
+    </script>
+
+
+
+
+
+
+<!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+             var Tawk_SRC = 'https://embed.tawk.to/' + "650a10a50f2b18434fd97357/1hanl2405";
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = Tawk_SRC;
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        });
+    </script>
+    <!--End of Tawk.to Script-->
+
+
+
+
+
+    <script>
+        var root = document.querySelector(':root');
+        root.style.setProperty('--primary', '#ffa500');
+    </script>
+
+</body>
+</html>
 
 {% endblock main-content %}
 

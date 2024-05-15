@@ -1,0 +1,14 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+
+{% block main-content %}
+
+<h2>Deposit Funds</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Deposit</button>
+  </form>
+
+{% endblock main-content %}
